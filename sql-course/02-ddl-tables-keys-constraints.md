@@ -82,10 +82,10 @@ Enforces a link to another table's primary key.
 ```sql
 CREATE TABLE sales (
     sale_id    INTEGER PRIMARY KEY,
-    user_id    INTEGER,
+    user_id    uuid,
     product_id INTEGER,
-    FOREIGN KEY (user_id)    REFERENCES users(u_id),
-    FOREIGN KEY (product_id) REFERENCES products(p_id)
+    FOREIGN KEY (user_id)    REFERENCES auth.users(id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 ```
 
